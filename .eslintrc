@@ -1,0 +1,54 @@
+{
+  "ignorePatterns": ["**/*.d.js", "serviceWorker.js", "reportWebVitals.js"],
+  "globals" : {
+    "JSX" : "readonly"
+  },
+  "extends": [
+    "react-app",
+    "plugin:jsx-a11y/recommended"
+  ],
+  //"plugins": ["cypress", "simple-import-sort"],
+  "rules": {
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "jsx-a11y/label-has-associated-control": [
+      "error",
+      {
+        "required": {
+          "some": ["nesting", "id"]
+        }
+      }
+    ],
+    "jsx-a11y/label-has-for": [
+      "error",
+      {
+        "required": {
+          "some": ["nesting", "id"]
+        }
+      }
+    ],
+
+    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-use-before-define.md#how-to-use
+    "no-use-before-define": "off",
+
+    // We mostly use functional components anyhow
+    // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/require-default-props.md
+    "react/require-default-props": "off",
+
+    "no-unused-vars": "off",
+
+    "react/jsx-filename-extension": [1, { "extensions": ["js", "jsx"] }],
+    "import/extensions": ["error", "never"],
+    "react/jsx-props-no-spreading": "off"
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["src"],
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  //},
+  //"env": {
+  //  "cypress/globals": true
+  }
+}

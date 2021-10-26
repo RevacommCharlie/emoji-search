@@ -1,0 +1,17 @@
+---
+repos:
+  - repo: git://github.com/pre-commit/pre-commit-hooks
+    rev: v4.0.1
+    hooks:
+      - id: check-yaml
+      - id: detect-private-key
+      # - id: end-of-file-fixer
+      # - id: trailing-whitespace
+
+  - repo: local
+    hooks:
+      - id: eslint
+        name: eslint
+        entry: scripts/pre-commit-eslint
+        language: script
+        files: \.(js|jsx|ts|tsx)$
