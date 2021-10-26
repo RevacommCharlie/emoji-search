@@ -109,7 +109,7 @@ jobs:
           key: v1-npm-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             v1-npm-
-      - run: npm test
+      - run: npm run test
       # - run: npm test:coverage
       # - name: Announce failure
       #   if: ${{ failure() }}
